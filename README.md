@@ -8,10 +8,12 @@ The build enviroment is for the current Arduino IDE V 2.3.1 or the VisualMicro p
 The critical libraries required are:<br>
 ESPTelnetStream (https://github.com/LennartHennigs/ESPTelnet)<br>
 and Espressif Arduino-esp32 (https://github.com/espressif/arduino-esp32) V 2.0.17.<br>
-Disk images: I have included a 'reasonably' complete build of Ultrix 3.1 on an emulated RL02 drive.<br>
+Disk images: I have included a 'reasonably' complete build of Ultrix 3.1 on an emulated RL02 drive in the data directory.<br>
 This can be loaded into the Flash File System as a FAT image. The upload tool can be found<br>
-in either Arduino IDE 1.8 or via the VisualMicro plugin for Visual Studio.<br>
+in either Arduino IDE 1.8 or via the VisualMicro plugin for Visual Studio and by default uploads the contents of the data directory as above.<br>
+You will probably need to find and install the mkfatfs untility see: https://github.com/labplus-cn/mkfatfs/releases.<br>
 The app provides 1 telnet stream linked to a DL11 serial port mapped at 2 Unibus addresses: 0775610 and 0776500 Vector:0300.<br>
+This has been sysgened into the Ultrix kernel as a remote TTY.<br>
 (Do not try to use both at once!)<br>
 The root login does not need a password. There is a user account niss1 PW:dodk5133 ... contains example programmes.<br>
 <br>
