@@ -1,0 +1,46 @@
+SET CLK 50HZ
+set cpu 11/24 2m
+
+SET CR DISABLED
+SET DZ DISABLED
+SET HK DISABLED
+SET LPT DISABLED
+SET PTP DISABLED
+SET PTR DISABLED
+SET RHA DISABLED
+SET RHB DISABLED
+SET RK DISABLED
+SET RP DISABLED
+SET RQ DISABLED
+SET RX DISABLED
+SET TQ DISABLED
+SET VH DISABLED
+SET XQ DISABLED
+set tm disabled
+
+SET RL ENABLED
+SET RL0 RL02
+att rl0 ultrix-v3-single_24.rl02
+;ATT RL0 New_root.rl02
+;set rl1 rl02
+;att rl1 New_user.rl02
+
+; Additional Terminal (1xVT100 on DLV11) at 17776500 vec 300
+set dli enable
+set dli address=17775610
+set dli vector=300
+set dli lines=1
+set dlo enable
+set dlo lines=1
+set dlo nodataset
+set dlo0 7b
+attach dli 127.0.0.1:2041
+
+SET TU ENABLED
+SET TU TM03
+SET TU0 TU77
+ATT TU0 BB-X302B-BC_ULTRIX-11_V2_16USR_BIN_1984.tap
+
+BOOT RL
+
+;BOOT TU0 
