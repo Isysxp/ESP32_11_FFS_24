@@ -2,8 +2,8 @@
 <br>
 This is a modified version of a PDP11/40 emulation at https://github.com/Isysxp/PDP11-on-the-M5-Core<br>
 This app requires an ESP32 processor with at least 8Mb of PSRAM.<br>
-The current build is targeted for the Adafruit QT Py ESP32-S3 board.<br>
-This provide a complete PDP11/24 with an OS on a quite a small<br>
+The current build is targeted for the ESP32S3 Dev Module clones eg: ESP32 S3 DevKitC 1 ESP32 S3 WROOM1 N16R8 Development Board.<br>
+This provides a complete PDP11/24 with an OS on a quite a small module.<br>
 The build enviroment is for the current Arduino IDE V 2.3.1 or the VisualMicro plugin for Visual Studio.<br>
 The critical libraries required are:<br>
 ESPTelnetStream (https://github.com/LennartHennigs/ESPTelnet)<br>
@@ -30,6 +30,8 @@ from -std=gnu++11 to -std=gnu++17 to allow for template objects.
 <br>
 NB: Change the SSID and Password in ESP_Telnet.cpp to match your router. <br>
 NNB: If your are using the Arduino IDE, rename the root folder to ESP32_11_FFS for the app to load correctly. <br>
+NNNNNB: I strongly suggest you read up about Ultrix 3.1. This was the last of the none split I/D PDP11 operating systems.<br>
+Also, you will need to solder a bridge on the top of the board marked 'RGB' then when the blue LED flashes you can rest assured that the flash in being trashed!!!!
 <br>
 
 Ian Schofield August 2024<br>
