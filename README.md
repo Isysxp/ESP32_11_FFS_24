@@ -3,7 +3,8 @@
 This is a modified version of a PDP11/40 emulation at https://github.com/Isysxp/PDP11-on-the-M5-Core<br>
 This app requires an ESP32 processor with at least 8Mb of PSRAM.<br>
 The current build is targeted for the ESP32S3 Dev Module clones eg: ESP32 S3 DevKitC 1 ESP32 S3 WROOM1 N16R8 Development Board.<br>
-This provides a complete PDP11/24 with an OS on a quite a small module.<br>
+This provides a complete PDP11/24 (22 bit adressing + FPU) with an OS on a quite a small module.<br>
+Ultrix 3.1 is quite a sizeable OS to cram onto a single RL02. However, most of the commons apps are installed including vi, c and F77.<br>
 The build enviroment is for the current Arduino IDE V 2.3.1 or the VisualMicro plugin for Visual Studio.<br>
 The critical libraries required are:<br>
 ESPTelnetStream (https://github.com/LennartHennigs/ESPTelnet)<br>
