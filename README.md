@@ -15,6 +15,7 @@ You will probably need to find and install the mkfatfs untility see: https://git
 The app provides 1 telnet stream linked to a DL11 serial port mapped at 2 Unibus addresses: 0775610 and 0776500 Vector:0300.<br>
 This has been sysgened into the Ultrix kernel as a remote TTY.<br>
 (Do not try to use both at once!)<br>
+Change the SSID and Password in ESP_Telnet.cpp to match your router.<br>
 The root login does not need a password. There is a user account niss1 PW:dodk5133 ... contains example programmes.<br>
 <br>
 Ian Schofield April 2024<br>
