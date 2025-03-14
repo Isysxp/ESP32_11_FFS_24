@@ -34,6 +34,6 @@ NNNNNB: I strongly suggest you read up about Ultrix 3.1. This was the last of th
 Also, you will need to solder a bridge on the top of the board marked 'RGB' then when the blue LED flashes you can rest assured that the flash in being trashed!!!!
 <br>
 
-Ian Schofield August 2024<br>
+Ian Schofield March 2025<br>
 
 
