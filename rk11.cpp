@@ -133,6 +133,9 @@ void RK11::readwrite() {
                rkcs, rkba, rkwc, cylinder, surface, sector, w, rker);
     }
 
+    rkba18 = (uint32_t)rkba | (uint32_t)(rkcs & 060) << 12;     // Include ext addr bits
+    rkba18 = cpu.unibus.remap(rkba18);                          // Remap if Unibus map is enabled
+
     for (i = 0; i < 256 && rkwc != 0; i++) {
 	    rkba18 = rkba | (rkcs & 060) << 12;     // Include ext addr bits
         if (w) {

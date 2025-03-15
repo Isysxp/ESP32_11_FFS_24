@@ -208,11 +208,10 @@ uint32_t UNIBUS::remap(uint32_t addr)   // KT24
 		return addr;            // No remap
 
 	if (pg != UBM_M_PN)                                     /* last page? */
-		uba_last = (umap[pg] + off) & MEMSIZE22 - 1;             /* no, use map */
+		uba_last = (umap[pg] + off) & (MEMSIZE22 - 1);             /* no, use map */
 	else
-		uba_last = (IOBASE_22BIT + off) & MEMSIZE22 - 1;            /* yes, use fixed */
-	if (addr != uba_last)
-		addr = addr;
+		uba_last = (IOBASE_22BIT + off) & (MEMSIZE22 - 1);            /* yes, use fixed */
+
 	return uba_last;
 }
 
