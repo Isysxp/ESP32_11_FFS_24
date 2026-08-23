@@ -33,7 +33,6 @@ In addition, you will need to change the c standard in C:\Users\<username></user
 from -std=gnu++11 to -std=gnu++17 to allow for template objects.
 <br>
 NB: Change the SSID and Password in ESP_Telnet.cpp to match your router. <br>
-NNB: If your are using the Arduino IDE, rename the root folder to ESP32_11_FFS for the app to load correctly. <br>
 NNNNNB: I strongly suggest you read up about Ultrix 3.1. This was the last of the none split I/D PDP11 operating systems.<br>
 Also, you will need to solder a bridge on the top of the board marked 'RGB' then when the blue LED flashes you can rest assured that your flash is being trashed!!!!
 <br><br>
