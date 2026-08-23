@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
+#define USE_FLASH
 #include <string>
 #include <assert.h>
 #include <cstdlib>
@@ -9,6 +10,7 @@
 #include <string.h>
 #include "avr11.h"
 #include "kb11.h"
+#include "SD_MMC.h"
 #include <FFat.h>
 #include <ESP32Time.h>
 
@@ -34,8 +36,13 @@ void setup( char *rkfile, char *rlfile, int bootdev)
 
 	if (cpu.unibus.rk11.rk05)
 		return;
+#ifdef USE_FLASH
   cpu.unibus.rk11.rk05 = FFat.open(rkfile,"rb+");
   cpu.unibus.rl11.rl02 = FFat.open(rlfile,"rb+");
+#else
+  cpu.unibus.rk11.rk05 = SD_MMC.open(rkfile,"rb+");
+  cpu.unibus.rl11.rl02 = SD_MMC.open(rlfile,"rb+");
+#endif
   RLTYPE = 035;
   if (strcasestr(rlfile, ".rl02"))
       RLTYPE = 0235;
@@ -75,7 +82,7 @@ void loop0() {
            cpu.step();
         cpu.unibus.rk11.step();
         cpu.unibus.rl11.step();
-        if (kbdelay++ == 5000) {
+        if (kbdelay++ == 2000) {
             cpu.unibus.cons.poll();
             cpu.unibus.dl11.poll();
             kbdelay = 0;

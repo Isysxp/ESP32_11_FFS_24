@@ -128,6 +128,7 @@ void RL11::rlnotready()
 #ifdef PIN_OUT_DISK_ACT
     digitalWrite(PIN_OUT_DISK_ACT, LED_ON);
 #endif
+    rgbLedWrite(DATA_PIN, 0, 0, 10);
     //RLDS &= ~(1 << 6);
     RLCS &= ~(1 << 7);
 }
@@ -143,6 +144,7 @@ void RL11::rlready()
 #ifdef PIN_OUT_DISK_ACT
     digitalWrite(PIN_OUT_DISK_ACT, LED_OFF);
 #endif
+    
 }
 
 void rlerror(uint16_t e)
@@ -170,7 +172,7 @@ void RL11::step()
         w = false;
         break;
     default:
-        Serial.printf("%% unimplemented RL01/2 operation");  //  %#o", ((r.RLCS & 017) >> 1)))
+        Serial.printf("%% unimplemented RL01/2 operation:%d",(RLCS & 017) >> 1);  //  %#o", ((r.RLCS & 017) >> 1)))
         while (1);
     }
 

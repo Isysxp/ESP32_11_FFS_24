@@ -23,7 +23,9 @@ enum INTVEC {
 
 [[ noreturn ]] void trap(uint16_t num);
 
-#define DATA_PIN RGB_BUILTIN
+//#define DATA_PIN RGB_BUILTIN
+#define DATA_PIN 48
+
 
 #if defined (VMS)
 #include <ints.h>
