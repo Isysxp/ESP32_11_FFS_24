@@ -36,7 +36,10 @@ NB: Change the SSID and Password in ESP_Telnet.cpp to match your router. <br>
 NNNNNB: I strongly suggest you read up about Ultrix 3.1. This was the last of the none split I/D PDP11 operating systems.<br>
 Also, you will need to solder a bridge on the top of the board marked 'RGB' then when the blue LED flashes you can rest assured that your flash is being trashed!!!!
 <br><br>
+Update August 2026<br><br>
+The app has been reconfigures to run on either an ESP32S3 dev module (N16R8) (as above) using flash as storage of an ESP32P4 module using the SDCard.<br>
+To switch, add/remove #define FLASH in avr11.cpp and ESP32_11_FFS_24.ino. The SDCard pins are used for the P4 module but may be changed for your board.<br><br>
 
-Ian Schofield March 2025<br>
+Ian Schofield<br>
 
 
